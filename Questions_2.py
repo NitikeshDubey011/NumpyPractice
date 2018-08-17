@@ -41,12 +41,21 @@ print(arr[:, ::-1])
 
 # Q. Create a 2D array of shape 5x3 to contain random decimal numbers between 5 and 10.
 # answer:
-arr=np.arange(9).reshape(3,3)
-rand_arr=np.random.uniform(5,10,size=(5,3))
+arr = np.arange(9).reshape(3, 3)
+rand_arr = np.random.uniform(5, 10, size=(5, 3))
 print(rand_arr)
-
 
 # Q. Print or show only 3 decimal places of the numpy array rand_arr.
 # answer:
-arr=np.random.random((5,3))
-print(np.set_printoptions(precision=3))
+arr = np.random.random((5, 3))
+np.set_printoptions(precision=3)
+print(arr[:4])
+
+# Q. Pretty print rand_arr by suppressing the scientific notation (like 1e10)
+# answer:
+
+np.set_printoptions(suppress=False)
+arr = np.random.seed(100)
+rand_arr = np.random.random([3, 3]) / 1e3
+np.set_printoptions(suppress=True,precision=6)
+print(rand_arr)
